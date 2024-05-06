@@ -73,13 +73,14 @@ namespace CognitiveSearch.UI.Controllers
                         .Where(x => x.key.ToLower() == "satisfied")
                         .SelectMany(x => x.value)
                         .Where(x => x.value.ToLower() == "yes")
-                        .Select(x=>x.count)
+                        .Select(x => x.count)
                         .FirstOrDefault();
 
                 // calculate percentage by using total count from search
                 satisfiedCount = (double)satisfied.Value;
-               
-            } catch(Exception ex)
+
+            }
+            catch (Exception ex)
             {
                 viewModel.KeyInsight1 = "n/a";
             }
@@ -152,8 +153,9 @@ namespace CognitiveSearch.UI.Controllers
                     .Take(1)
                     .FirstOrDefault();
             }
-            catch (Exception ex) {
-                viewModel.KeyInsight1 = "n/a"; 
+            catch (Exception ex)
+            {
+                viewModel.KeyInsight1 = "n/a";
             }
 
             // set the top destination city based on facet count
@@ -186,13 +188,14 @@ namespace CognitiveSearch.UI.Controllers
                     .ToList();
 
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 viewModel.TopInsights.Add("n/a");
             }
 
             return viewModel;
         }
-        
+
         public IActionResult Index()
         {
             CheckDocSearchInitialized();
@@ -210,12 +213,12 @@ namespace CognitiveSearch.UI.Controllers
         }
 
         public IActionResult Error()
-            {
-                return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 
-            }
+        }
 
-        public IActionResult Search([FromQuery]string q = "", [FromQuery]string facets = "", [FromQuery]int page = 1, [FromQuery]string queryType = "Full")
+        public IActionResult Search([FromQuery] string q = "", [FromQuery] string facets = "", [FromQuery] int page = 1, [FromQuery] string queryType = "Full")
         {
             // Split the facets.
             //  Expected format: &facets=key1_val1,key1_val2,key2_val1
@@ -276,8 +279,13 @@ namespace CognitiveSearch.UI.Controllers
 
             // build aggregate insights
             var documentResult = _docSearch.GetDocuments(searchParams.q, searchParams.searchFacets, searchParams.currentPage, searchParams.polygonString, searchParams.startDate, searchParams.endDate, searchParams.queryType);
-            
-            
+
+
+            var facetableFields = _docSearch.Model.Facets
+                .Where(k => !k.Name.ToLower().Contains("city") && !k.Name.ToLower().Contains("hotel") && !k.Name.ToLower().Contains("airline"))
+                .Select(k => k.Name)
+                .ToArray();
+
             var viewModel = new SearchResultViewModel
             {
                 documentResult = documentResult,
@@ -288,7 +296,7 @@ namespace CognitiveSearch.UI.Controllers
                 applicationInstrumentationKey = _configuration.GetSection("InstrumentationKey")?.Value,
                 searchServiceName = _configuration.GetSection("SearchServiceName")?.Value,
                 indexName = _configuration.GetSection("SearchIndexName")?.Value,
-                facetableFields = _docSearch.Model.Facets.Select(k => k.Name).ToArray(),
+                facetableFields = facetableFields,
                 answer = "",
                 semanticEnabled = !String.IsNullOrEmpty(_configuration.GetSection("SemanticConfiguration")?.Value),
                 Insight1 = GetCustomerSatisfactionInsights(documentResult),

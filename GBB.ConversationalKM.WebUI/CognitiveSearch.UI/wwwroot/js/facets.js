@@ -22,10 +22,10 @@ function UpdateFilterReset() {
                             <div class="card-body">
                                 <div class="panel-body panel-scroll">
                                 <ul class="list-group last-group-flush">`;
-                            
-                              //</ul>
-                           // </div>
-                   // </div>`;
+
+        //</ul>
+        // </div>
+        // </div>`;
 
         selectedFacets.forEach(function (item, index, array) { // foreach facet with a selected value
             var name = item.key;
@@ -41,12 +41,12 @@ function UpdateFilterReset() {
                     //htmlString += item2 + ` <a href="javascript:void(0)" onclick="RemoveFilter(\'${name}\', \'${item2}'\)"><span class="ms-Icon ms-Icon--Clear"></span></a><br>`;
                     htmlString += `<li class="list-group-item"> ${item2} <a href="javascript:void(0)" onclick="RemoveFilter(\'${name}\', \'${item2}'\)"><span class="ms-Icon ms-Icon--Clear"></span></a><br></li>`;
                     $('#' + name + '_' + idx).addClass('is-checked');
-                    
+
                 });
             }
         });
 
-        
+
         //htmlString += `</div></div></div>`;
         htmlString += `</ul></div></div>`;
     }
@@ -83,6 +83,10 @@ function UpdateAccordion() {
         if (data !== null) {
 
             var title = name.replace(/([A-Z])/g, ' $1').replace(/^./, function (str) { return str.toUpperCase(); })
+            // add code if title is hotel or Airline or contains city then return
+            if (name.includes("Hotel") || name.includes("Airline") || name.includes("City")) {
+                return;
+            }
 
             if (title == "Metadata_storage_file_extension") {
                 title = "File Extension"
@@ -98,7 +102,7 @@ function UpdateAccordion() {
                                     <h4 class="accordion-header" id="${name}-facets">
                                         <button id="${name}-facets-button" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${name}" aria-controls="${name}" href="#${name}">${title}</button>
                                     </h4>`;
-                                    
+
             if (index === 0) {
                 facetResultsHTML += `<div id="${name}" class="accordion-collapse collapse in" aria-labelledby="${name}" data-bs-parent="#mainAccordion">
                 <div class="accordion-body panel-scroll">`;

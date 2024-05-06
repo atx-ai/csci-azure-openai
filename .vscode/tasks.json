@@ -27,6 +27,42 @@
       "options": {
         "cwd": "${workspaceFolder}/GBB.ConversationalKM.Python"
       }
+    },
+    {
+        "label": "build",
+        "command": "dotnet",
+        "type": "process",
+        "args": [
+            "build",
+            "${workspaceFolder}/GBB.ConversationalKM.WebUI/CognitiveSearch.UI.sln",
+            "/property:GenerateFullPaths=true",
+            "/consoleloggerparameters:NoSummary;ForceNoAlign"
+        ],
+        "problemMatcher": "$msCompile"
+    },
+    {
+        "label": "publish",
+        "command": "dotnet",
+        "type": "process",
+        "args": [
+            "publish",
+            "${workspaceFolder}/GBB.ConversationalKM.WebUI/CognitiveSearch.UI.sln",
+            "/property:GenerateFullPaths=true",
+            "/consoleloggerparameters:NoSummary;ForceNoAlign"
+        ],
+        "problemMatcher": "$msCompile"
+    },
+    {
+        "label": "watch",
+        "command": "dotnet",
+        "type": "process",
+        "args": [
+            "watch",
+            "run",
+            "--project",
+            "${workspaceFolder}/GBB.ConversationalKM.WebUI/CognitiveSearch.UI.sln"
+        ],
+        "problemMatcher": "$msCompile"
     }
   ]
 }

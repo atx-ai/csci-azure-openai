@@ -1,0 +1,21 @@
+Evan: Thank you for calling ACME TELCO, this is Evan, how can I assist you today?
+
+Erica: Hi Evan, this is Erica. I've been having poor voice quality and intermittent call drop issues when I'm in the downtown area, even though the network coverage is good. Can you help me with this issue?
+
+Evan: I'm sorry to hear that, Erica. We've been receiving similar complaints from other customers as well, and we're working on it. However, we don't have a quick solution at the moment.
+
+Erica: What do you mean you don't have a quick solution? I've been facing this issue for weeks now, and I can't make or receive important calls in the downtown area.
+
+Evan: I understand your frustration, Erica. But as I said, we're working on it. I don't have any quick fixes to offer you at the moment.
+
+Erica: This is unacceptable, Evan. I need a reliable service, and if ACME TELCO can't provide that, I'll have to switch to another service provider.
+
+Evan: I understand your decision, Erica. I'm sorry we couldn't provide you with the service you were looking for. Is there anything else I can help you with?
+
+Erica: No, that's all. Goodbye.
+
+Evan: Goodbye, Erica. We're sorry to see you go.
+
+(Erica hangs up)
+
+Evan: (sighs) Another dissatisfied customer. I hope management takes this issue seriously before we lose more customers.

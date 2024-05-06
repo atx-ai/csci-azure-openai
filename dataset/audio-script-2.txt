@@ -1,0 +1,29 @@
+Maria: Thank you for calling ACME TELCO, this is Maria, how may I assist you today?
+
+Alex: Hi Maria, I'm Alex and I'm interested in your new 5G service. I'm currently with another telco provider but I'm considering switching over to ACME TELCO.
+
+Maria: Great to hear that, Alex. Our 5G service offers faster download and upload speeds, low latency, and improved coverage. Do you have any questions or concerns about the service?
+
+Alex: Yes, I do. Can you tell me more about the coverage and network reliability?
+
+Maria: Of course, our 5G network covers most major cities and we're continually expanding our coverage. Our network is also reliable, and we use the latest technology to ensure that you have a seamless experience.
+
+Alex: What about the pricing? How does it compare to other telco providers?
+
+Maria: Our pricing is competitive and we offer a variety of plans to suit different needs and budgets. We also have a special discount offer for new customers who switch over to ACME TELCO.
+
+Alex: That sounds great! Can you tell me more about the discount offer?
+
+Maria: Sure, if you switch over to ACME TELCO, you'll get a 20% discount on your monthly bill for the first 6 months. And if you sign up for a 2-year contract, you'll also get a free 5G phone.
+
+Alex: That's a good deal. I think I'm ready to switch over to ACME TELCO.
+
+Maria: Great, Alex! I can help you with the process of switching over. Can I have your contact details and we can proceed with the registration process?
+
+Alex: Yes, please. Here are my contact details. Thank you for your help, Maria. I'm excited to experience the benefits of the new 5G service.
+
+Maria: Thank you, Alex. I've taken note of your details and will guide you through the registration process. Welcome to the ACME TELCO family, we're happy to have you on board.
+
+Alex: Thank you so much, Maria. You've been very helpful. Have a great day!
+
+Maria: You too, Alex. Don't hesitate to reach out if you have any further questions or concerns.
