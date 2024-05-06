@@ -1,0 +1,23 @@
+Natalie: Thank you for calling ACME TELCO, this is Natalie, how can I assist you today?
+
+Oscar: Hi Natalie, this is Oscar. I've been facing low 4G coverage in my area. I'm not able to stream videos smoothly and my internet speed is very slow.
+
+Natalie: I'm sorry to hear that, Oscar. Let me check the coverage in your area. Yes, I see that the coverage is not very strong in your location. However, we have a solution for this.
+
+Oscar: What's the solution?
+
+Natalie: If you reset your phone's network settings, it will automatically upgrade your line to our new 5G service. With this new service, you'll get free streaming and unlimited data plan with better coverage.
+
+Oscar: Really? That sounds great. How do I reset my network settings?
+
+Natalie: It's very easy. Just go to your iPhone's settings, then select 'General', then 'Reset' and then select 'Reset Network Settings'. Once you do this, your phone will automatically upgrade to the new 5G service.
+
+Oscar: Okay, let me try that.
+
+Oscar: Wow, Natalie, it worked! My phone is now showing 5G and the internet speed is so much faster. I can stream videos without any buffering.
+
+Natalie: I'm glad to hear that, Oscar. Our new 5G service is designed to provide better coverage and faster internet speeds. Is there anything else I can help you with?
+
+Oscar: No, that's all. Thank you so much for your help, Natalie. You've been really helpful.
+
+Natalie: You're welcome, Oscar. Don't hesitate to call us back if you need any further assistance. Have a great day!

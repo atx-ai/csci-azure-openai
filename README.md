@@ -1,3 +1,4 @@
+**Please see**: This forked from [here](https://github.com/microsoft/Customer-Service-Conversational-Insights-with-Azure-OpenAI-Services) and customized to meet telecom service providers customer support requirement.
 # Conversation knowledge mining solution accelerator
 
 MENU: [**USER STORY**](#user-story) \| [**ONE-CLICK DEPLOY**](#one-click-deploy)  \| [**SUPPORTING DOCUMENTS**](#supporting-documents) \|
@@ -19,9 +20,13 @@ performance.
 
 **Scenario**
 
-This scenario shows how a data professional within a travel company contact
+This scenario shows how a data professional within a telecome company contact
 center can use AI to quickly analyze call logs and analytics to identify areas 
 for improvement.
+
+Below is one case scenario for which this fork is customized:
+
+ACME Telco, a prominent telecom service provider, grapples with a wealth of customer call data. This data holds valuable insights related to customer satisfaction, service issues, and other critical aspects. However, manual analysis of this vast dataset is both time-consuming and error-prone. Consequently, ACME Telco misses out on opportunities for improvement and growth. The company aims to make data-driven decisions by identifying trends, recurring issues, and sales opportunities within their call center interactions
 
 **Key features**
 
@@ -36,9 +41,9 @@ can inform data driven actions to drive decisions around staffing and operations
 
 **Below is an image of the solution accelerator.**\
 \
-![image](/images/readMe/image2.png)
+![image](./images/readMe/image2.png)
 
-<h2><img src="/images/readMe/oneClickDeploy.png" width="64">
+<h2><img src="./images/readMe/oneClickDeploy.png" width="64">
 <br/>
 One-click deploy
 </h2>
@@ -88,7 +93,7 @@ Learn more on how to configure your [Azure OpenAI prompt here](#integrate-your-o
 
 1. Click the following deployment button to create the required resources for this accelerator directly in your Azure Subscription.
 
-   [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2FCustomer-Service-Conversational-Insights-with-Azure-OpenAI-Services%2Fmaster%2Finfrastructure%2FARM%2Fdeployment-template.json)
+   [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fatx-ai%2Fcsci-azure-openai%2Fmaster%2Finfrastructure%2FARM%2Fdeployment-template.json)
 
 2.  Most fields will have a default name set already. You will need to update the following Azure OpenAI settings:
 
@@ -110,16 +115,22 @@ Learn more on how to configure your [Azure OpenAI prompt here](#integrate-your-o
     -   OPENAI_MODEL_TYPE - for the sample app this should be set to chat\
         ![OpenAI Fields](image-1.png)
         
-1.  Optionally, you may also update the **Web UI Docker Image Reference** and the **OpenAI Function Docker Image Reference** to point to your own container images instead of the images that we host (this would be necessary if you want to test your own changes to the Web UI or OpenAI Function code).
+3.  Optionally, you may also update the **Web UI Docker Image Reference** and the **OpenAI Function Docker Image Reference** to point to your own container images instead of the images that we host (this would be necessary if you want to test your own changes to the Web UI or OpenAI Function code).
+4.  Here we have customized the **Web UI Docker Image to meet the Telecom service providers requirement. Here we have primarily changed OpenAPI Prompt and GBB.ConversationalKM.WebUI updated to ignore Facet values containing city, airline and hotels. We made our onw Docker Image and stored in a new Docker container registry of Azure. To build  the docker image you can use following commands after installing .net SDK in your machine
+```
+docker buildx build -t atxai.azurecr.io/ckm-ui-dev:1.0.4 -f Docker/Dockerfile .
+docker push atxai.azurecr.io/ckm-ui-dev:1.0.4
+``` 
  
-2.  Click \'review and create\' to start the deployment. The deployment can take up to 15 minutes to complete.
+5.  Click \'review and create\' to start the deployment. The deployment can take up to 15 minutes to complete.
 
-3.   When deployment is complete, launch the application by navigating to
+6.   When deployment is complete, launch the application by navigating to
     your Azure resource group, choosing the app service resource, and
     clicking on the default domain. You should bookmark this url to have
     quick access to your deployed application.
 
-
+If you have used the modified WebUI image of this repo then It will show as below
+![image](./images/readMe/image2-1.png)
 
 ### Azure Cognitive Search - enabling Semantic Search
 
@@ -145,12 +156,12 @@ Use the following steps to enable and configure semantic search:
     left menu and select the "conversational-index" from the list of
     indexes that was created when you deployed.\
     \
-    ![image](/images/readMe/image5.png)
+    ![image](./images/readMe/image5.png)
 
 -   Select the tab labeled "Semantic configurations" and then click "Add
     semantic configuration".\
     \
-    ![image](/images/readMe/image6.png)
+    ![image](./images/readMe/image6.png)
 
 -   Fill out the configuration blade to match your requirements or us
     this example setup:
@@ -161,7 +172,7 @@ Use the following steps to enable and configure semantic search:
 
     -   **Content fields:** text, merged_content, summary
 
-    -   **Keyword fields:** keyphrases![image](/images/readMe/image7.png)
+    -   **Keyword fields:** keyphrases![image](./images/readMe/image7.png)
 
 -   Click save on the panel and then save at the top of the page to
     create the new semantic configuration will be applied to your index.
@@ -196,7 +207,7 @@ Use the following steps to enable and configure semantic search:
     changes to your semantic configuration to change how the relevancy
     of your results are displayed here.\
     \
-    ![image](/images/readMe/image10.png)
+    ![image](/images/readMe/image2-1.png)
 
 If you plan to not utilize Semantic Search on the web UI, you can
 remove the radio button from the search by updating the application
@@ -212,10 +223,10 @@ The defined keys have to be added in the OPENAI_PROMPT_KEYS parameter as well, t
 <br>
 Please be sure to set up both parameters accordingly to your entities name.
 
-| Environment variable | Default value | Note |
-|--|--|--|
-|OPENAI_PROMPT | Execute these tasks:<br>&#8226; Summarize the conversation, key: summary<br>&#8226; Is the customer satisfied with the interaction with the agent, key: satisfied<br> Answer in JSON machine-readable format, using the keys from above.<br> Format the ouput as JSON object called 'results'. Pretty print the JSON and make sure that is properly closed at the end.<br>| The prompt to be used with OpenAI, please define the keys in the setting below as well |
-|OPENAI_PROMPT_KEYS | summary:Edm.String:False,satisfied:Edm.String:True|The prompt keys to use for the OpenAI API. Format: key,SearchType,Facetable e.g. key1:Edm.String:False,key2:Edm.String:True,key3:Edm.String:True | 
+| Environment variable | Default value                                                                                                                                                                                                                                                                                                                                                              | Note                                                                                                                                             |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| OPENAI_PROMPT        | Execute these tasks:<br>&#8226; Summarize the conversation, key: summary<br>&#8226; Is the customer satisfied with the interaction with the agent, key: satisfied<br> Answer in JSON machine-readable format, using the keys from above.<br> Format the ouput as JSON object called 'results'. Pretty print the JSON and make sure that is properly closed at the end.<br> | The prompt to be used with OpenAI, please define the keys in the setting below as well                                                           |
+| OPENAI_PROMPT_KEYS   | summary:Edm.String:False,satisfied:Edm.String:True                                                                                                                                                                                                                                                                                                                         | The prompt keys to use for the OpenAI API. Format: key,SearchType,Facetable e.g. key1:Edm.String:False,key2:Edm.String:True,key3:Edm.String:True |
 
 ### Modify the prompt after deployment
 
@@ -275,7 +286,7 @@ documentation.
 
 -   From the home page, click on the customize button located in the upper right hand corner of the page.
 
-![image](/images/readMe/image10.png)
+![image](/images/readMe/image2-1.png)
 
 ![image](/images/readMe/image14.png)
 

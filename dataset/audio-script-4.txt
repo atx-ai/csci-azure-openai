@@ -1,0 +1,27 @@
+Evan: Thank you for calling ACME TELCO, this is Evan, how can I assist you today?
+
+Ashley: Hi Evan, this is Ashley. I'm moving from Austin to Dallas permanently, and I need to relocate my internet cable connection. Can you help me with this?
+
+Evan: Sure, Ashley. I can raise a request to relocate your internet connection. Can you please provide me with your new address in Dallas?
+
+Ashley: Yes, my new address is 1234 Main Street, Dallas, TX 75201.
+
+Evan: Great, I've raised a request to relocate your internet connection to your new address. You'll need to return your modem to our local Austin office and get a new modem from our Dallas office after your move.
+
+Ashley: Okay, got it. When will my internet connection be set up at my new address?
+
+Evan: It usually takes 3-5 business days to set up a new connection. However, we'll try to get it done as soon as possible.
+
+Ashley: That's great. Thank you so much, Evan. You've been really helpful.
+
+Evan: You're welcome, Ashley. I hope you have a smooth move to Dallas. Is there anything else I can help you with?
+
+Ashley: No, that's all. Thank you again, Evan.
+
+Evan: You're welcome, Ashley. Have a great day and a happy move to Dallas.
+
+Ashley: Thanks, you too.
+
+(Ashley hangs up)
+
+Evan: (smiling) Another satisfied customer. I'm glad I could help her.

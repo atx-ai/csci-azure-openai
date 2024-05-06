@@ -35,9 +35,9 @@ namespace CognitiveSearch.UI
             "StartTime",
             "EndTime",
             "keyphrases",
-            "DestCity",
-            "OriginCity",
-            "hotels",
+            // "DestCity",
+            // "OriginCity",
+            // "hotels",
             "summary",
             "satisfied",
 
