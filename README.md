@@ -20,7 +20,7 @@ performance.
 
 **Scenario**
 
-This scenario shows how a data professional within a telecome company contact
+This scenario shows how a data professional within a telecom company contact
 center can use AI to quickly analyze call logs and analytics to identify areas 
 for improvement.
 
